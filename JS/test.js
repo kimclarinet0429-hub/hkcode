@@ -1,30 +1,33 @@
-// 키보드 입력 방식을 반드시 알아야 한다.
+const name = document.getElementById('userName').value;
+const email = document.getElementById('userEmail').value;
+const age = document.getElementById('userAge').value;
+const city = document.getElementById('userCity').value;
+const isAgreed = document.getElementById('agree').checked;
 
-// prompt()
+//체크박스의 내용을 가져와야해서. checked가 박히면 참 거짓으로 판단함.
+// value가 붙으면 그 값을 가지고 와야해서 하는것, 안붙으면 그작업을 하겠다는 것.
 
-
-
-// while (1) {
-//   i >= 0;
-//   let input = parseInt(prompt("정수를 입력하시오."));
-//   input = i + 1;
-//   if (input) {
-//     console.log('정수의 값을 더합니다.')
-//   }
-// }
-// 반복문 안에 프롬프트가 들어오지 않아서 작동1번만됨. 
-
-// 1부터 입력받은 정수까지 정수이 합게 출력하세요.
-
-while (1) {
-  let input = parseInt(prompt("정수를입력하세요"));
-  if (input === 7) {
-    console.log("7입력되었으니 종료");
+const genderRadios = document.getElementById('gender');
+let gender = "";
+for(let radio of genderRadios) {
+  if(radio.checked){
+    gender = radio.value;
     break;
+    // 찾는순간 멈추게 하기위해서.
   }
-  let tot = 0;
-  for (i =1; i<= input; i++) {
-    tot = tot + i;
-  }
-  console.log(tot);
 }
+
+if(!name || !email) {
+
+}
+
+if(!isAgreed) {
+  
+}
+
+const resultDiv = document.getElementById('result');
+// 지금까지 입력한 내용 모두 출력하게 하려고 이 작업을 하는 것임.(회원가입시 생각해볼것.)
+
+// form태그에서는 입력을 받기 위해 만든거라 if하고 !으로 코딩함.
+// for문에서 (let radio of gende~~ 여기 첫번째꺼 때려넣고진행, 두번째꺼(갯수만큼))
+// Radio는 한 그룹이다. 동시 선택X, 하나는 무조건 선택해야함.
